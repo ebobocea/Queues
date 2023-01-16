@@ -24,3 +24,24 @@ struct Queue<T> {
     }
 }
 
+//Visualisation purposes only
+extension Queue: CustomStringConvertible{
+    var description: String {
+        let topDevider = "-------Top-------\n"
+        let bottomDevider = "\n-------Bottom-------"
+        let stackElements =  array.map{"\($0)"}.reversed().joined(separator: "\n")
+        return topDevider + stackElements + bottomDevider
+    }
+}
+
+var queue = Queue<Int>()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+print(queue)
+
+queue.dequeue()
+queue.dequeue()
+queue.peek()
+
+print(queue)
